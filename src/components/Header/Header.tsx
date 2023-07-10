@@ -1,17 +1,15 @@
 "use client";
 import React, { useEffect } from "react";
-
+import styles from "./Header.module.css";
 const Header = () => {
-	useEffect(() => {
-		const toggleIcon = document.querySelector(".toggle-icon");
-		if (toggleIcon) {
-			toggleIcon.addEventListener("click", () => {
-				toggleIcon.classList.toggle("bx-moon");
-				toggleIcon.classList.toggle("bx-sun");
-				document.body.classList.toggle("dark-mode");
-			});
+	function handleThemeToggle() {
+		const toggler = document.getElementById("toggle_theme");
+		if (toggler) {
+			toggler.classList.toggle("bx-moon");
+			toggler.classList.toggle("bx-sun");
+			document.body.classList.toggle("dark-mode");
 		}
-	}, []);
+	}
 
 	return (
 		<header className="header">
@@ -30,9 +28,9 @@ const Header = () => {
 					Portfolio
 				</a>
 			</nav>
-			<div className="toggle">
-				<i className="bx bx-sun toggle-icon"></i>
-			</div>
+			<button className={styles.toggle} onClick={() => handleThemeToggle()}>
+				<i id="toggle_theme" className={`bx bx-sun toggle-icon`}></i>
+			</button>
 		</header>
 	);
 };

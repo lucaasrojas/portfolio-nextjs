@@ -1,0 +1,10 @@
+.toggle_icon:hover {
+	cursor: pointer;
+}
+
+.toggle {
+	border: none;
+	cursor: pointer;
+	background: transparent;
+	color: var(--primary-color);
+}
