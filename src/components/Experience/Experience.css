@@ -1,0 +1,26 @@
+section.experience {
+    margin-bottom: 50px;
+}
+
+.job-dot{
+    color: var(--secondary-color);
+}
+.experience-content_project-list{
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+}
+.company-box{
+    margin-top: -10px;
+}
+    .experience-content_project{
+        margin-left: 7.5px;
+        padding-left: 17.8px;
+        padding-top: 8px;
+        border-left: 2px solid var(--secondary-color);
+        margin-top: -8px;
+    }
+
+    .experience-content{ 
+        display: flex;
+    flex-direction: column;
+    }

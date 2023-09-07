@@ -112,7 +112,7 @@ a {
 @import "../styles/about.css";
 @import "../styles/navbar.css";
 
-* {
+*:not(ul) {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -143,7 +143,7 @@ main {
 	margin: auto;
 }
 section {
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	align-items: center;
 }

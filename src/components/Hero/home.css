@@ -1,3 +1,7 @@
+section.home{
+	margin-top: 68.8px;
+}
+
 .home-content h1::before,
 .home-content h3::before,
 .home-content p::before,
