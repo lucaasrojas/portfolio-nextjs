@@ -98,7 +98,7 @@ return (
                 <div className="company-box" key={`company-${company.company}`}>
                     
                             <div key={`company-${company.company}`} style={{display: "flex", gap: 10, alignItems: "center"}}>
-                                <i class='bx bxs-circle job-dot'></i>
+                                <i className='bx bxs-circle job-dot'></i>
                                 <h2 className="experience-content-title"> {company.role} at {company.company} | </h2><p>{company.from} - {company.to}</p>
                             </div>
                     

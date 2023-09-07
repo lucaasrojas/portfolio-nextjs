@@ -132,6 +132,7 @@ body {
 	background: var(--main-color);
 	color: var(--primary-color);
 	overflow-x: hidden;
+  scroll-behavior:smooth;
 }
 main {
 	scroll-behavior: smooth;
