@@ -7,7 +7,7 @@ const projectList: ProjectCardItem[] = [
 		id: "besttimer",
 		description: "Minimalistic Timer | ReactJS",
 		linkRepo: "https://github.com/lucaasrojas/best-timer",
-		linkSite: "https://lucaasrojas.github.io/best-timer/#/",
+		linkSite: "https://lucaasrojas-best-timer.netlify.app/",
 	},
 	{
 		title: "Share your WiFi",
