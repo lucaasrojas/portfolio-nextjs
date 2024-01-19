@@ -2,7 +2,8 @@
 	position: absolute;
 	width: 100vw;
 	left: 0;
-	max-height: 100vh;
+	min-height: 100vh;
+	padding: 50px 0;
 }
 .portfolio .portfolio-content {
 	height: 100%;
