@@ -62,7 +62,7 @@
 
 .about-content .right-column .overlay {
   position: absolute;
-  /* top: 0; */
+  top: 0;
   right: 0;
   /* width: 236px; */
   /* height: 229px; */
@@ -74,9 +74,8 @@
 
 .about-content .right-column .overlay-filler {
   position: absolute;
-  /* top: 0; */
+  top: 0;
   right: calc(-50vw);
-
   width: 50vw;
   height: 100vh;
   background: var(--primary-color);
