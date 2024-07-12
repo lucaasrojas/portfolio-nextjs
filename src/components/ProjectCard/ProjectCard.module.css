@@ -20,7 +20,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	position: absolute;
-	font-size: 64px;
+	font-size: 2.5rem;
 	color: white;
 	transition: 0.5s;
 }

@@ -8,12 +8,11 @@ export type ProjectCardItem = {
 	description: string;
 	linkRepo: string;
 	linkSite: string;
-	id: string;
+	image: string;
 };
 
 export default function ProjectCard(props: ProjectCardItem) {
-	const { title, description, linkRepo, linkSite, id } = props;
-
+	const { title, description, linkRepo, linkSite, image } = props;
 	return (
 		<div className={styles.proyect_card}>
 			<a
@@ -22,11 +21,16 @@ export default function ProjectCard(props: ProjectCardItem) {
 				target="_blank"
 				rel="noreferrer"
 			>
-				<div className={styles.img_card}>
+				<div
+					className={styles.img_card}
+					style={{ ["--content" as string]: `'${title}'` }}
+				>
 					<Image
-						src={`/assets/projects/${id}.png`}
+						src={image}
 						fill
-						alt="Picture of the author"
+						alt={title}
+						blurDataURL="./assets/placeholder.jpg"
+						placeholder="blur"
 					/>
 				</div>
 			</a>

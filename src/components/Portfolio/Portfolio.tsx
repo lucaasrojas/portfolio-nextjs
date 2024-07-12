@@ -1,69 +1,49 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import ProjectCard, { ProjectCardItem } from "../ProjectCard/ProjectCard";
 import "./portfolio.css";
-const projectList: ProjectCardItem[] = [
-	{
-		title: "Best Timer",
-		id: "besttimer",
-		description: "Minimalistic Timer | ReactJS",
-		linkRepo: "https://github.com/lucaasrojas/best-timer",
-		linkSite: "https://lucaasrojas-best-timer.netlify.app/",
-	},
-	{
-		title: "Share your WiFi",
-		id: "sharewifi",
-		description: "Share you WiFi credentials easily | ReactJS",
-		linkRepo: "https://github.com/lucaasrojas/qrcode-wifi",
-		linkSite: "https://lucaasrojas-share-wifi.netlify.app/",
-	},
-	{
-		title: "Expense Tracker",
-		id: "expense_tracker",
-		description: "Manage your expenses with this tool | ReactJS - Material UI",
-		linkRepo: "https://github.com/lucaasrojas/expense-tracker",
-		linkSite: "https://lucaasrojas-expense-tracker.netlify.app/",
-	},
-	{
-		title: "Food Order",
-		id: "food_order",
-		description: "Forget to cook, order your meal | ReactJS ",
-		linkRepo: "https://github.com/lucaasrojas/react-food-order",
-		linkSite: "https://lucaasrojas-food-order.netlify.app/",
-	},
-	{
-		title: "Stickit Notes",
-		id: "stickit_notes",
-		description: "Just notes | Vanilla JS",
-		linkRepo: "https://github.com/lucaasrojas/stickynotes_vanillajs",
-		linkSite: "https://lucaasrojas-sticky-notes.netlify.app/",
-	},
-	{
-		title: "Calculator",
-		id: "calculator",
-		description: "Nothing else to say | ReactJs",
-		linkRepo: "https://github.com/lucaasrojas/React-Calculator",
-		linkSite: "https://lucaasrojas-calculator.netlify.app/",
-	},
-	{
-		title: "PokeDex",
-		id: "pokedex",
-		description: "Track your pokemons | ReactJs",
-		linkRepo: "https://github.com/lucaasrojas/pokedex",
-		linkSite: "https://lucaasrojas-pokedex.netlify.app/",
-	},
-];
+
+const createSlug = (str: string) => {
+	return str.trim().replaceAll(" ", "-").toLowerCase();
+};
+
 const Portfolio = () => {
+	const [projectsList, setProjectsList] = useState<ProjectCardItem[]>([]);
+	function parseCSVtoJSON(csvData: string) {
+		const lines = csvData.trim().split("\r\n");
+		const headers = lines[0].split(",");
+
+		const projects = lines.slice(1).map((line) => {
+			const values = line.split(",");
+			let project: { [key: string]: string } = {};
+			headers.forEach((header, index) => {
+				project[header] = values[index];
+			});
+			return project;
+		});
+
+		return projects as ProjectCardItem[];
+	}
+
+	const fetchProjectsList = () => {
+		fetch(
+			"https://docs.google.com/spreadsheets/d/16Dautg48PL9T4jjyEWb-mUtozgVlDCBJkyObQA9psS8/export?format=csv"
+		)
+			.then((res) => res.text())
+			.then((res) => {
+				setProjectsList(parseCSVtoJSON(res));
+			});
+	};
+	useEffect(() => {
+		fetchProjectsList();
+	}, []);
 	return (
 		<section id="portfolio" className="portfolio">
 			<div className="portfolio-content">
-				{projectList.map((project: ProjectCardItem) => (
+				{projectsList.map((project: ProjectCardItem) => (
 					<ProjectCard
-						key={project.id}
-						id={project.id}
-						title={project.title}
-						description={project.description}
-						linkRepo={project.linkRepo}
-						linkSite={project.linkSite}
+						key={createSlug(project.title)}
+						{...project}
 					></ProjectCard>
 				))}
 			</div>
