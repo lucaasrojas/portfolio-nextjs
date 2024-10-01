@@ -8,21 +8,7 @@
   display: flex;
 }
 
-.about-content .left-column {
-  height: 100%;
-  width: 400px;
-  display: flex;
-  align-items: center;
-}
 
-.about-content .left-column ul {
-  font-size: 16px;
-  line-height: 8vh;
-}
-
-.about-content .left-column ul li::marker {
-  color: var(--secondary-color);
-}
 
 .about-content .right-column {
   width: 100%;

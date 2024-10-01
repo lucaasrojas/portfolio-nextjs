@@ -1,9 +1,9 @@
 "use client";
 import React, { useCallback, useEffect } from "react";
-import styles from "./About.module.css";
+import styles from "./TechStack.module.css";
 import { hobbies, technologies } from "@/const";
 
-const About = () => {
+const TechStack = () => {
 	const [showTechnologies, setShowTechnologies] = React.useState(false);
 	useEffect(() => {
 		const list = document.getElementById("technologies_list");
@@ -33,11 +33,10 @@ const About = () => {
 		[showTechnologies]
 	);
 	return (
-		<section id="about" className="about">
+		<section id="techstack" className="about">
 			<div className="about-content">
-				<div className="left-column p-10">
+			<div className={`${styles.left_column} p-10`}>
 					<ul
-						style={{ position: "relative" }}
 						className={`${styles.technologies_list}`}
 						id="technologies_list"
 					>
@@ -61,7 +60,7 @@ const About = () => {
 								className="item"
 								style={{ "--i": i } as React.CSSProperties}
 							>
-								<h3>{hobby}</h3>
+								<h3 className="font-bold">{hobby}</h3>
 							</div>
 						))}
 
@@ -75,4 +74,4 @@ const About = () => {
 	);
 };
 
-export default About;
+export default TechStack;

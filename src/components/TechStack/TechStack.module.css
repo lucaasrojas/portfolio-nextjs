@@ -1,0 +1,32 @@
+.technologies_list {
+	position: relative;
+	font-size: 16px;
+	line-height: 8vh;
+	list-style-type: disc;
+}
+
+.technology_item {
+	opacity: 0;
+	transform: translateX(-30%);
+	animation: appearFromLeft 2s calc(0.5s * var(--i)) forwards;
+}
+
+.technology_item::marker {
+	color: var(--secondary-color);
+}
+
+
+.left_column {
+	height: 100%;
+	width: 400px;
+	display: flex;
+	align-items: center;
+}
+
+
+@keyframes appearFromLeft {
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}

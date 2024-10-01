@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect } from "react";
-import styles from "./Header.module.css";
+import styles from "./NavBar.module.css";
 
 import Link from 'next/link'
 const headerPadding = 90;
-const Header = () => {
-	const sections = ["Home", "About", "Experience", "Portfolio"]
+const NavBar = () => {
+	const sections = ["Home", "About","TechStack", "Experience", "Portfolio"]
 	function handleThemeToggle() {
 		const toggler = document.getElementById("toggle_theme");
 		if (toggler) {
@@ -59,4 +59,4 @@ const scrollToSection = (sectionId:string) => {
 	);
 };
 
-export default Header;
+export default NavBar;

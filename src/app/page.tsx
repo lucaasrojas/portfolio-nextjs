@@ -1,7 +1,7 @@
 import React from "react"
-import About from "@/components/About/About";
+import TechStack from "@/components/TechStack/TechStack";
 import Experience from "@/components/Experience/Experience";
-import Header from "@/components/Header/Header";
+import NavBar from "@/components/NavBar/NavBar";
 import Hero from "@/components/Hero/Hero";
 import Portfolio from "@/components/Portfolio/Portfolio";
 import 'tailwindcss/tailwind.css';
@@ -9,10 +9,10 @@ export default function Home() {
 
 	return (
 		<>
-			<Header />
+			<NavBar />
 			<main>
 				<Hero />
-				<About />
+				<TechStack />
 				<Experience />
 				<Portfolio />
 			</main>

@@ -10,6 +10,8 @@ section.experience {
 .experience-content_project-list {
     margin-bottom: 0px;
     padding-bottom: 20px;
+    list-style-type: disc;
+    margin-left: 16px;
 }
 
 .company-box {
