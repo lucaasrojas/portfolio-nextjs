@@ -35,7 +35,7 @@ const TechStack = () => {
 	return (
 		<section id="techstack" className="about">
 			<div className="about-content">
-			<div className={`${styles.left_column} p-10`}>
+				<div className={`${styles.left_column} p-10`}>
 					<ul
 						className={`${styles.technologies_list}`}
 						id="technologies_list"

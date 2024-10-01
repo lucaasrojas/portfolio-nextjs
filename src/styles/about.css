@@ -49,8 +49,6 @@
   position: absolute;
   top: 0;
   right: 0;
-  /* width: calc(100vw*0.5); */
-  /* height: 229px; */
   border-top: 50vh solid var(--primary-color);
   border-right: 368px solid var(--primary-color);
   border-bottom: 50vh solid var(--primary-color);
@@ -88,8 +86,3 @@
   }
 }
 
-@keyframes rotateProfileCircle {
-  100% {
-    transform: rotate(360deg);
-  }
-}

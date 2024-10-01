@@ -4,7 +4,7 @@ import "./Experience.css"
 
 const Experience = () => {
     return (
-        <section id="experience" className="experience px-10">
+        <section id="experience" className="experience px-10 py-16">
             <div className="experience-content">
                 {
                     experience.map(company => (

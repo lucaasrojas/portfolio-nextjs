@@ -5,7 +5,7 @@ import styles from "./NavBar.module.css";
 import Link from 'next/link'
 const headerPadding = 90;
 const NavBar = () => {
-	const sections = ["Home","TechStack", "Experience", "Portfolio"]
+	const sections = ["Home", "TechStack", "Experience", "Projects"]
 	function handleThemeToggle() {
 		const toggler = document.getElementById("toggle_theme");
 		if (toggler) {
@@ -31,7 +31,7 @@ const scrollToSection = (sectionId:string) => {
 
 		scrollTo({
 			behavior: "smooth",
-			top:( section.offsetTop - headerPadding)
+			top:( section.offsetTop - headerPadding + 20)
 		})
 	}
 }

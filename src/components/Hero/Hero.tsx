@@ -1,7 +1,7 @@
 import React from "react";
 import "./home.css";
 import LinkButton from "../Button/LinkButton";
-import ImageSpinner from "../subcomponents/ImageSpinner";
+import ImageSpinner from "../subcomponents/ImageSpinner/ImageSpinner";
 
 interface SocialMediaIconLinkProps {
 	src: string
@@ -19,7 +19,7 @@ const SocialMediaIconLink:React.FC<SocialMediaIconLinkProps> = ({ src, type }) =
 
 const Hero = () => {
 	return (
-		<section id="home" className="home container p-10">
+		<section id="home" className="home container p-10 mx-auto">
 			<div className="grid md:grid-cols-2 gap-4 w-full sm:grid-cols-1">
 
 				<div className="home-content max-[768px]:order-2 min-[768px]:order-1">

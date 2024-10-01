@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar/NavBar";
 import Hero from "@/components/Hero/Hero";
 import Portfolio from "@/components/Portfolio/Portfolio";
 import 'tailwindcss/tailwind.css';
+import ScrollIndicator from "@/components/subcomponents/ScrollIndicator/ScrollIndicator";
 export default function Home() {
 
 	return (
@@ -16,6 +17,8 @@ export default function Home() {
 				<Experience />
 				<Portfolio />
 			</main>
+
+			<ScrollIndicator />
 		</>
 	);
 }
