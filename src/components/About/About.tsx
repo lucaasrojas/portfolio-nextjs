@@ -1,16 +1,8 @@
 "use client";
 import React, { useCallback, useEffect } from "react";
 import styles from "./About.module.css";
-const hobbies = ["Coding", "Cyclism", "Craftmen", "Self-taught"];
-const technologies = [
-	"ReactJS",
-	"Redux / Redux Thunk / Context API",
-	"Typescript",
-	"Material UI / Styled Components",
-	"Figma / UXUI",
-	"Jest / React Testing Library",
-	"Amazon Web Services",
-];
+import { hobbies, technologies } from "@/const";
+
 const About = () => {
 	const [showTechnologies, setShowTechnologies] = React.useState(false);
 	useEffect(() => {
@@ -43,7 +35,7 @@ const About = () => {
 	return (
 		<section id="about" className="about">
 			<div className="about-content">
-				<div className="left-column">
+				<div className="left-column p-10">
 					<ul
 						style={{ position: "relative" }}
 						className={`${styles.technologies_list}`}
@@ -55,7 +47,7 @@ const About = () => {
 								style={{ "--i": i } as React.CSSProperties}
 								className={showTechnologies ? styles.technology_item : ""}
 							>
-								<h3>{tech}</h3>
+								<p className={`font-semibold text-xl my-20 tech_label`}>{tech}</p>
 							</li>
 						))}
 					</ul>

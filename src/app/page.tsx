@@ -4,6 +4,7 @@ import Experience from "@/components/Experience/Experience";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import Portfolio from "@/components/Portfolio/Portfolio";
+import 'tailwindcss/tailwind.css';
 export default function Home() {
 
 	return (

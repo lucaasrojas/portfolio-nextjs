@@ -14,7 +14,7 @@ export type ProjectCardItem = {
 export default function ProjectCard(props: ProjectCardItem) {
 	const { title, description, linkRepo, linkSite, image } = props;
 	return (
-		<div className={styles.proyect_card}>
+		<div className={`${styles.proyect_card} grid xs:grid-cols-1 md:grid-cols-2`}>
 			<a
 				className={styles.proyect_card__a}
 				href={linkSite}
@@ -35,7 +35,7 @@ export default function ProjectCard(props: ProjectCardItem) {
 				</div>
 			</a>
 			<div className={styles.card_content}>
-				<h3>{title}</h3>
+				<h3 className="text-lg font-bold">{title}</h3>
 				<p>{description}</p>
 				<p className={styles.card_content__links_wrapper}>
 					<LinkButton href={linkRepo} variant="secondary" label={"Repo"} />

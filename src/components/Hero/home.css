@@ -72,10 +72,9 @@ section.home{
 	bottom: 40px;
 	width: auto;
 	display: flex;
-	gap: 25px;
 }
 
-.home-sci a {
+.socialMediaIcon_link {
 	position: relative;
 	display: inline-flex;
 	justify-content: center;
@@ -93,11 +92,11 @@ section.home{
 	transition: 0.5s;
 }
 
-.home-sci a:hover {
+.socialMediaIcon_link:hover {
 	color: var(--main-color);
 }
 
-.home-sci a::before {
+.socialMediaIcon_link::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -108,7 +107,7 @@ section.home{
 	z-index: -1;
 	transition: 0.3s;
 }
-.home-sci a:hover::before {
+.socialMediaIcon_link:hover::before {
 	width: 100%;
 }
 
@@ -121,7 +120,7 @@ section.home{
 }
 .profile-image {
 	position: relative;
-	width: 300px;
+	width: 330px;
 	height: 300px;
 }
 
