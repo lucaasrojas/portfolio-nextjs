@@ -39,7 +39,7 @@ const Portfolio = () => {
 	}, []);
 	return (
 		<section id="portfolio" className="portfolio">
-			<div className="portfolio-content">
+			<div className="portfolio-content grid xs:grid-cols-1 xl:grid-cols-2">
 				{projectsList.map((project: ProjectCardItem) => (
 					<ProjectCard
 						key={createSlug(project.title)}

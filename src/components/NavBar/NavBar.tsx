@@ -5,7 +5,7 @@ import styles from "./NavBar.module.css";
 import Link from 'next/link'
 const headerPadding = 90;
 const NavBar = () => {
-	const sections = ["Home", "About","TechStack", "Experience", "Portfolio"]
+	const sections = ["Home","TechStack", "Experience", "Portfolio"]
 	function handleThemeToggle() {
 		const toggler = document.getElementById("toggle_theme");
 		if (toggler) {

@@ -46,7 +46,7 @@ const TechStack = () => {
 								style={{ "--i": i } as React.CSSProperties}
 								className={showTechnologies ? styles.technology_item : ""}
 							>
-								<p className={`font-semibold text-xl my-20 tech_label`}>{tech}</p>
+								<p className={`font-semibold text-xl tech_label m-2`}>{tech}</p>
 							</li>
 						))}
 					</ul>
