@@ -33,9 +33,9 @@ const TechStack = () => {
 		[showTechnologies]
 	);
 	return (
-		<section id="techstack" className="about">
-			<div className="about-content">
-				<div className={`${styles.left_column} p-10`}>
+		<section id="techstack" className="about w-full">
+			{/* <div className="about-content"> */}
+				<div className={` p-10 w-full flex justify-center`}>
 					<ul
 						className={`${styles.technologies_list}`}
 						id="technologies_list"
@@ -52,7 +52,7 @@ const TechStack = () => {
 					</ul>
 				</div>
 
-				<div className="right-column">
+				{/* <div className="right-column">
 					<div className="circle">
 						{hobbies.map((hobby, i) => (
 							<div
@@ -68,8 +68,8 @@ const TechStack = () => {
 					</div>
 					<div className="overlay"></div>
 					<div className="overlay-filler"></div>
-				</div>
-			</div>
+				</div> */}
+			{/* </div> */}
 		</section>
 	);
 };
