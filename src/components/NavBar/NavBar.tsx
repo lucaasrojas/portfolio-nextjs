@@ -73,6 +73,7 @@ const NavBar = () => {
         <span className="max-sm:hidden">
           {sections.map((section: string) => (
             <SectionLink
+              key={section}
               isSelected={selectedSection === section}
               section={section}
               handleLinkSelection={handleLinkSelection}
