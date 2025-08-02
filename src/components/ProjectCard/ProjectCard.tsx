@@ -1,47 +1,50 @@
 "use client";
+import Link from "next/link";
 import LinkButton from "../Button/LinkButton";
 import styles from "./ProjectCard.module.css";
 import Image from "next/image";
+import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
+import { cn } from "@/lib/utils";
 
 export type ProjectCardItem = {
-	title: string;
-	description: string;
-	linkRepo: string;
-	linkSite: string;
-	image: string;
+  title: string;
+  description: string;
+  linkRepo: string;
+  linkSite: string;
+  image: string;
+  className?: string;
 };
 
 export default function ProjectCard(props: ProjectCardItem) {
-	const { title, description, linkRepo, linkSite, image } = props;
-	return (
-		<div className={`${styles.proyect_card} grid xs:grid-cols-1 md:grid-cols-2`}>
-			<a
-				className={styles.proyect_card__a}
-				href={linkSite}
-				target="_blank"
-				rel="noreferrer"
-			>
-				<div
-					className={styles.img_card}
-					style={{ ["--content" as string]: `'${title}'` }}
-				>
-					<Image
-						src={image}
-						fill
-						alt={title}
-						blurDataURL="./assets/placeholder.jpg"
-						placeholder="blur"
-					/>
-				</div>
-			</a>
-			<div className={styles.card_content}>
-				<h3 className="text-lg font-bold">{title}</h3>
-				<p>{description}</p>
-				<p className={styles.card_content__links_wrapper}>
-					<LinkButton href={linkRepo} variant="secondary" label={"Repo"} />
-					<LinkButton href={linkSite} variant="primary" label={"Site"} />
-				</p>
-			</div>
-		</div>
-	);
+  const { title, description, linkRepo, linkSite, image, className } = props;
+  return (
+    <Card
+      className={cn(
+        `border-2 border-secondary rounded-[10px] shadow-lg shadow-secondary/30`,
+        className
+      )}
+    >
+      <CardContent className="pt-6">
+        <div
+          className={styles.img_card}
+          style={{ ["--content" as string]: `'${title}'` }}
+        >
+          <Image
+            src={image}
+            fill
+            alt={title}
+            blurDataURL="./assets/placeholder.jpg"
+            placeholder="blur"
+          />
+        </div>
+        <div className="mt-2">
+          <h2 className="text-2xl font-bold">{title}</h2>
+          <p className="muted">{description}</p>
+        </div>
+      </CardContent>
+      <CardFooter className="flex justify-end">
+        <LinkButton href={linkSite} variant="default" label={">"} />
+      </CardFooter>
+    </Card>
+  );
 }

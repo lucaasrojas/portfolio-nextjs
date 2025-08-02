@@ -1,5 +1,5 @@
-section.home{
-	margin-top: 68.8px;
+section.home {
+  margin-top: 68.8px;
 }
 
 .home-content h1::before,
@@ -7,92 +7,91 @@ section.home{
 .home-content p::before,
 .home-content .btn-box::before,
 .home-sci::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	right: 0;
-	background: var(--main-color);
-	width: 100%;
-	height: 100%;
-	animation: swipeRight 1s ease forwards;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--main-color);
+  width: 100%;
+  height: 100%;
+  animation: swipeRight 1s ease forwards;
 }
 
 .home-content h1::before {
-	animation-delay: 0.7s;
+  animation-delay: 0.7s;
 }
 
 .home-content h3::before {
-	animation-delay: 1s;
+  animation-delay: 1s;
 }
 
 .home-content p::before {
-	animation-delay: 1.2s;
+  animation-delay: 1.2s;
 }
 
 .home-content .btn-box::before {
-	animation-delay: 1.5s;
-	z-index: 2;
+  animation-delay: 1.5s;
+  z-index: 2;
 }
 
 .home-sci::before {
-	animation-delay: 1.9s;
-	z-index: 2;
+  animation-delay: 1.9s;
+  z-index: 2;
 }
 
 .home-content h3 {
-	color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .home-content .btn-box {
-	width: 345px;
-	height: 50px;
-	display: flex;
-	justify-content: space-between;
-	position: relative;
+  width: 345px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
 }
 
 .home-sci {
-	position: absolute;
-	bottom: 40px;
-	width: auto;
-	display: flex;
+  position: absolute;
+  bottom: 40px;
+  right: 0;
+  width: auto;
+  display: flex;
 }
 
 .socialMediaIcon_link {
-	position: relative;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	width: 40px;
-	height: 40px;
-	background: transparent;
-	border: 2px solid var(--secondary-color);
-	border-radius: 50%;
-	font-size: 20px;
-	color: var(--secondary-color);
-	text-decoration: none;
-	z-index: 1;
-	overflow: hidden;
-	transition: 0.5s;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid var(--secondary-color);
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--secondary-color);
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
 }
 
 .socialMediaIcon_link:hover {
-	color: var(--main-color);
+  color: var(--main-color);
 }
 
 .socialMediaIcon_link::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 0;
-	height: 100%;
-	background: var(--secondary-color);
-	z-index: -1;
-	transition: 0.3s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--secondary-color);
+  z-index: -1;
+  transition: 0.3s;
 }
 .socialMediaIcon_link:hover::before {
-	width: 100%;
+  width: 100%;
 }
-
-
