@@ -1,11 +1,8 @@
-"use client";
-import Link from "next/link";
 import LinkButton from "../Button/LinkButton";
 import styles from "./ProjectCard.module.css";
 import Image from "next/image";
-import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
+import { Card, CardContent, CardFooter } from "../ui/card";
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
 
 export type ProjectCardItem = {
   title: string;
@@ -17,20 +14,8 @@ export type ProjectCardItem = {
 };
 
 export default function ProjectCard(props: ProjectCardItem) {
-  const { title, description, linkRepo, linkSite, image, className } = props;
-  const [imgSrc, setImgSrc] = useState<string>('');
+  const { title, description, linkSite, image, className } = props;
 
-  // TODO: Mejorar tiempo de carga y tratar de pasarlo a Server y cachear las imagenes
-  const handleCapture = async () => {
-    const response = await fetch(`/api/screenshot?url=${linkSite}`);
-    const blob = await response.blob();
-    const imageUrl = URL.createObjectURL(blob);
-    setImgSrc(imageUrl);
-  };
-
-  useEffect(() => {
-    handleCapture();
-  }, []);
   return (
     <Card
       className={cn(
@@ -41,7 +26,7 @@ export default function ProjectCard(props: ProjectCardItem) {
       <CardContent className="pt-6">
         <div className={styles.img_card}>
           <Image
-            src={imgSrc || "/assets/placeholder.jpg"}
+            src={image || "/assets/placeholder.jpg"}
             unoptimized
             fill
             alt={title}
