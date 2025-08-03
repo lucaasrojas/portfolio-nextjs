@@ -16,6 +16,7 @@ const ImageSpinner: React.FC<ImageSpinnerProps> = ({ src }) => {
                         height={280}
                         src={src}
                         alt="profile image with spinner effect"
+                        priority
                     />
                 </div>
             </div>

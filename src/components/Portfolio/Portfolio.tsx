@@ -32,7 +32,9 @@ const Portfolio = () => {
   const projectsContainer = useRef<HTMLDivElement>(null);
 
   useGSAP(
+    
     () => {
+      // if(!projectsContainer.current) return;
       gsap.utils.toArray<HTMLDivElement>(".projectCard").forEach((card) => {
         gsap.fromTo(
           card,
@@ -51,7 +53,7 @@ const Portfolio = () => {
         );
       });
     },
-    { scope: projectsContainer }
+    { scope: projectsContainer, dependencies: [projectsContainer.current] }
   );
 
   const fetchProjectsList = () => {
