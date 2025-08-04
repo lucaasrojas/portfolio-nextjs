@@ -1,7 +1,8 @@
+import Chromium from "@sparticuz/chromium-min";
 import { NextResponse, type NextRequest } from "next/server";
 import puppeteer, { type Browser } from 'puppeteer';
 import puppeteerCore, { type Browser as BrowserCore } from 'puppeteer-core';
-import chromium from '@sparticuz/chromium-min';
+
 export async function GET(request: NextRequest) {
   try {
     // An example for Logic
@@ -9,16 +10,22 @@ export async function GET(request: NextRequest) {
     const url = searchParams.get("url");
     if (!url) return NextResponse.json({ error: "Invalid request" }, { status: 400 });
 
-    let browser: Browser | BrowserCore;
+    let browser;
     if (process.env.NODE_ENV === 'production' || process.env.VERCEL_ENV === 'production') {
         // Configure the version based on your package.json (for your future usage).
-        const executablePath = await chromium.executablePath('https://github.com/Sparticuz/chromium/releases/download/v131.0.1/chromium-v131.0.1-pack.tar')
-        browser = await puppeteerCore.launch({
+        const executablePath = await Chromium.executablePath('https://github.com/Sparticuz/chromium/releases/download/v131.0.1/chromium-v131.0.1-pack.tar')
+        browser = await puppeteer.launch({
             executablePath,
-            // You can pass other configs as required
-            args: chromium.args,
-            // headless: chromium.headless,
-            // defaultViewport: chromium.defaultViewport
+            args: puppeteer.defaultArgs({args: Chromium.args, headless: "shell"}),
+            headless: "shell",
+            defaultViewport:  {
+              deviceScaleFactor: 1,
+              hasTouch: false,
+              height: 1080,
+              isLandscape: true,
+              isMobile: false,
+              width: 1920,
+            }
         })
     } else {
         browser = await puppeteer.launch({
