@@ -3,6 +3,7 @@ import styles from "./ProjectCard.module.css";
 import Image from "next/image";
 import { Card, CardContent, CardFooter } from "../ui/card";
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 export type ProjectCardItem = {
   title: string;
@@ -15,6 +16,21 @@ export type ProjectCardItem = {
 
 export default function ProjectCard(props: ProjectCardItem) {
   const { title, description, linkSite, image, className } = props;
+  const [ imgSrc, setImgSrc] = useState(image)
+
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        const response = await fetch(`/api/screenshot?url=${linkSite}`);
+        const blob = await response.blob();
+        const objectURL = URL.createObjectURL(blob);
+        setImgSrc(objectURL);
+      } catch (error) {
+        console.error('Error fetching image:', error);
+      }
+    };
+    fetchImage();
+  }, [linkSite])
 
   return (
     <Card
@@ -26,7 +42,7 @@ export default function ProjectCard(props: ProjectCardItem) {
       <CardContent className="pt-6">
         <div className={styles.img_card}>
           <Image
-            src={image || "/assets/placeholder.jpg"}
+            src={imgSrc || "/assets/placeholder.jpg"}
             unoptimized
             fill
             alt={title}
