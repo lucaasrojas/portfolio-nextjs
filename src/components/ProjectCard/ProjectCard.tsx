@@ -29,7 +29,7 @@ export default function ProjectCard(props: ProjectCardItem) {
         console.error('Error fetching image:', error);
       }
     };
-    fetchImage();
+    // fetchImage();
   }, [linkSite])
 
   return (
