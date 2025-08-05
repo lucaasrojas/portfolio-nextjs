@@ -1,34 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Portfolio
 
-## Getting Started
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0bf56658-635a-4bbc-bbfb-1bf4863a01e9/deploy-status)](https://app.netlify.com/sites/lucasrojas/deploys)
+[Link](https://lucasrojas.netlify.app)
 
-First, run the development server:
+TBD
+
+## 📦 Tecnologías utilizadas
+
+- [Next.js](https://nextjs.org/) — Framework de React para renderizado del lado del servidor
+- [GSAP + ScrollTrigger](https://gsap.com/scrolltrigger) — Animaciones fluidas y dinámicas
+- [Playwright](https://playwright.dev/) — Automatización y captura de pantalla
+- Otras herramientas relevantes (añadí las que correspondan)
+
+## ✨ Características
+
+- ✅ Renderizado dinámico optimizado
+- 🎯 Animaciones con GSAP y ScrollTrigger
+- 📸 Generación de screenshots vía Playwright
+- ⚙️ Arquitectura escalable y modular
+
+## 🛠 Instalación
 
 ```bash
+git clone https://github.com/tuusuario/nombre-del-proyecto.git
+cd nombre-del-proyecto
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📷 Screenshots
+Agregá capturas o gifs que muestren el funcionamiento o diseño.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Estructura del proyecto
+```
+├── components/
+├── pages/
+├── public/
+├── styles/
+└── utils/
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🧪 Testing / Automatización
+Describe si usás Playwright, Jest, o cualquier otro framework de testing. Ejemplo:
 
-## Learn More
+```bash
+npx playwright test
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🚧 Roadmap
+- [ ] Crear roadmap
+- [ ] Implementar testing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+🙋‍♂️ Autor
+Creado por Lucas — desarrollador enfocado en rendimiento, animaciones y automatización web.
