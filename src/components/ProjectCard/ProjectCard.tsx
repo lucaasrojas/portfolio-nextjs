@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Card, CardContent, CardFooter } from "../ui/card";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
+import { Badge } from "../ui/badge";
 
 export type ProjectCardItem = {
   title: string;
@@ -12,12 +13,15 @@ export type ProjectCardItem = {
   linkSite: string;
   image: string;
   className?: string;
+  state: 'ready' | 'wip';
+  type: 'assesment' | 'own'
 };
 
 export default function ProjectCard(props: ProjectCardItem) {
-  const { title, description, linkSite, image, className } = props;
+  const { title, description, linkSite, image, className, state, type } = props;
   const [ imgSrc, setImgSrc] = useState(image)
 
+  // TODO: Keep working on this, the issue is in prod api returns 500
   useEffect(() => {
     const fetchImage = async () => {
       try {
@@ -52,6 +56,8 @@ export default function ProjectCard(props: ProjectCardItem) {
           />
         </div>
         <div className="mt-2">
+        {state === 'wip' && <Badge variant="outline" className="bg-yellow-200 text-yellow-800 border-yellow-800">WIP</Badge>}
+        {type === 'assesment' && <Badge variant="outline" className="bg-gray-200 text-gray-800 border-gray-800">Technical Assesment</Badge>}
           <h2 className="text-2xl font-bold">{title}</h2>
           <p className="muted">{description}</p>
         </div>
